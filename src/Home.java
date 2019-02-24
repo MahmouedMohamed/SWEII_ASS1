@@ -4,6 +4,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import com.dropbox.core.DbxException;
+
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -46,7 +49,7 @@ public class Home extends JFrame {
 				In.setVisible(true);
 			}
 		});
-		btnNewButton.setBounds(163, 47, 89, 23);
+		btnNewButton.setBounds(173, 11, 89, 23);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Nasa");
@@ -57,7 +60,7 @@ public class Home extends JFrame {
 				In.setVisible(true);
 			}
 		});
-		btnNewButton_1.setBounds(163, 119, 89, 23);
+		btnNewButton_1.setBounds(10, 105, 89, 23);
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnPoems = new JButton("Poems");
@@ -67,8 +70,23 @@ public class Home extends JFrame {
 				In.setVisible(true);
 			}
 		});
-		btnPoems.setBounds(163, 191, 89, 23);
+		btnPoems.setBounds(173, 227, 89, 23);
 		contentPane.add(btnPoems);
+		
+		JButton btnDropbox = new JButton("Dropbox");
+		btnDropbox.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				try {
+					dropboxgui In=new dropboxgui();
+					In.setVisible(true);
+				} catch (DbxException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		});
+		btnDropbox.setBounds(335, 105, 89, 23);
+		contentPane.add(btnDropbox);
 	}
 
 }
